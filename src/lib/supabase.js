@@ -1,11 +1,11 @@
 // ============================================================
 //  LOCAL JSON DATABASE  –  Drop-in Supabase replacement
-//  All data is stored in localStorage under "cgb_db"
+//  All data is stored in localStorage under "rex_db"
 // ============================================================
 
 // ── helpers ──────────────────────────────────────────────────
 
-const DB_KEY = 'cgb_db';
+const DB_KEY = 'rex_db';
 
 function loadDB() {
   try {
@@ -24,7 +24,7 @@ function seed() {
     users: [
       {
         id: 'demo-user-001',
-        email: 'demo@cgb.gov.ph',
+        email: 'demo@rex.ph',
         password: 'Demo1234!',
         full_name: 'Demo Applicant',
         created_at: new Date().toISOString(),
@@ -34,7 +34,7 @@ function seed() {
       {
         id: 'demo-user-001',
         full_name: 'Demo Applicant',
-        email: 'demo@cgb.gov.ph',
+        email: 'demo@rex.ph',
         phone: '09171234567',
         address: 'Brgy. Sample, Cabanatuan City',
         barangay: 'Brgy. Sample',
@@ -61,7 +61,7 @@ function seed() {
         user_id: 'demo-user-001',
         user_name: 'Demo Applicant',
         user_avatar_url: null,
-        content: 'Welcome to the CGB Applicant Portal! Feel free to share updates here.',
+        content: 'Welcome to the REX EDUCATION Applicant Portal! Feel free to share updates here.',
         image_url: null,
         likes_count: 3,
         comments_count: 1,
@@ -92,7 +92,7 @@ function err(msg) { return { data: null, error: { message: msg, code: msg } }; }
 
 // ── auth session (in-memory + localStorage) ──────────────────
 
-const SESSION_KEY = 'cgb_session';
+const SESSION_KEY = 'rex_session';
 
 function getStoredSession() {
   try {

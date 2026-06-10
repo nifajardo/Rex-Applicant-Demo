@@ -35,22 +35,22 @@ const TestimonialsSection = () => {
             <Card className="bg-white shadow-lg rounded-xl overflow-hidden border border-slate-200 flex flex-col h-full">
               <CardHeader className="flex flex-col items-center p-6 pb-4">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
-                  <img alt="Profile picture of Katrina Jane R. Arco, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/4b85d9a86e069798981e8693d7ce111a.jpg" />
+                  <img alt="Profile picture of Katrina Jane R. Arco, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="/linda-walker.png" />
                 </div>
-                <CardTitle className="text-xl font-bold text-slate-800 text-center">Katrina Jane R. Arco</CardTitle>
+                <CardTitle className="text-xl font-bold text-slate-800 text-center">Linda Walker</CardTitle>
                 <p className="text-sm text-slate-500 text-center">22 years old, Mahacot Kanluran, Batangas City</p>
-                <p className="text-sm text-slate-500 text-center">BS Accountancy, 2024-2025</p>
+                <p className="text-sm text-slate-500 text-center">BS Secondary Education, 2024-2025</p>
                 <p className="text-sm text-slate-500 text-center">Cum Laude, Dean's List (8 consecutive semesters)</p>
               </CardHeader>
               <CardContent className="p-6 pt-0 flex-grow flex items-center justify-center">
                 <p className="text-slate-700 italic text-center text-sm">
-                  "Isang mapagpalang araw po. Lubos po akong nagpapasalamat sa REX Education Scholarship Program, sa pangunguna ni Hon. Beverley Rose Dimacuha at sa lahat ng bumubuo nito.
+                  "Magandang araw po. Lubos po akong nagpapasalamat sa REX Education Scholarship Program at sa lahat ng taong naging bahagi ng programang ito.
                   <br /><br />
-                  I was fortunate po to become an automatic scholar simula Grade 7 hanggang sa makapagtapos ako ng college sa kursong BS Accountancy — bonus na lang din po ang pagiging Cum Laude.
+                  Bilang anak po ng isang magsasaka at maybahay, hindi naging madali ang aking pag-aaral. Maraming pagkakataon na kinailangan naming magtipid upang matustusan ang mga pangangailangan sa eskwela. Dahil po sa scholarship na ito, nabawasan ang aming mga alalahanin at mas nakapagpokus ako sa aking pag-aaral.
                   <br /><br />
-                  The program served as one of my most valuable support systems, providing assistance that was truly supplemental to my educational needs throughout my academic journey. I truly hope po that this initiative continues to grow and reach more students in need.
+                  Sa tulong ng programang ito, nakapagtapos po ako ng kursong BS Secondary Education at ngayon ay isa nang ganap na guro. Ang oportunidad na ibinigay ninyo ay naging daan upang maabot ko ang aking mga pangarap.
                   <br /><br />
-                  Maraming salamat po, at nawa’y pagpalain pa po kayo ng Diyos."
+                  Maraming salamat po sa inyong kabutihan at malasakit. Nawa'y mas marami pa po kayong kabataang matulungan sa mga susunod na taon."
                 </p>
               </CardContent>
             </Card>
@@ -67,19 +67,21 @@ const TestimonialsSection = () => {
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
                   <img alt="Profile picture of Yrielle Lyka M. De Castro, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/1112a950c98683824791d86dcdb41123.jpg" />
                 </div>
-                <CardTitle className="text-xl font-bold text-slate-800 text-center">Yrielle Lyka M. De Castro</CardTitle>
+                <CardTitle className="text-xl font-bold text-slate-800 text-center">Shane B. Lawson</CardTitle>
                 <p className="text-sm text-slate-500 text-center">21, El Sitio Subdivision, Dumantay, Batangas City</p>
                 <p className="text-sm text-slate-500 text-center">BS Nursing, Batangas State University, 2025</p>
                  <p className="text-sm text-slate-500 text-center">Cum Laude</p>
               </CardHeader>
               <CardContent className="p-6 pt-0 flex-grow flex items-center justify-center">
                 <p className="text-slate-700 italic text-center text-sm">
-                  "With a heart full of gratitude, I am proud to say that I have been a REX Education scholar since I was in high school. This scholarship grant not only paid for my tuition and school expenses, but it also helped my parents by lessening the financial burden on our family, allowing me to focus more on my studies and dreams in life.
-                  <br /><br />
-                  Being a REX Education scholar was not just a big help for me, it was also a reminder that someone believed in me. This program of educational assistance empowers young individuals like me to overcome financial challenges and become an instruments of inspiration for others. Thank you so much for believing in students like me and giving us the opportunity to dream big despite life challenges.
-                  <br /><br />
-                  I will forever carry this honor not just for myself, but for every scholar who strives hard to be successful in life."
-                </p>
+                "Isang mapagpalang araw po. Taos-puso po akong nagpapasalamat sa REX Education Scholarship Program para sa malaking tulong na aking natanggap sa buong panahon ng aking pag-aaral.
+                <br /><br />
+                Bilang isang estudyanteng nagmula sa simpleng pamilya, ang scholarship po na ito ay naging malaking biyaya. Nakatulong ito sa aking mga gastusin sa paaralan at nagbigay sa akin ng motibasyon upang pagbutihin pa ang aking akademikong pagganap.
+                <br /><br />
+                Nakatapos po ako ng BS Information Technology at ngayon ay nagtatrabaho bilang software developer. Malaking bahagi ng aking tagumpay ang suporta at tiwalang ipinagkaloob ng programang ito.
+                <br /><br />
+                Maraming salamat po sa patuloy na pagsuporta sa edukasyon ng mga kabataan. Pagpalain pa po kayo ng Diyos."
+              </p>
               </CardContent>
             </Card>
           </motion.div>
@@ -95,20 +97,20 @@ const TestimonialsSection = () => {
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
                   <img alt="Profile picture of John Aeron A. Canatuan, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/5b22c0b7e7a0ff3c5367325cc06a8ba7.jpg" />
                 </div>
-                <CardTitle className="text-xl font-bold text-slate-800 text-center">John Aeron A. Canatuan</CardTitle>
+                <CardTitle className="text-xl font-bold text-slate-800 text-center">Mitchell L. Dela Cruz</CardTitle>
                 <p className="text-sm text-slate-500 text-center">22, Purok 1, Kumintang Ilaya, Batangas City</p>
                 <p className="text-sm text-slate-500 text-center">BS Psychology, July 2025</p>
                 <p className="text-sm text-slate-500 text-center">Magna Cum Laude</p>
               </CardHeader>
               <CardContent className="p-6 pt-0 flex-grow flex items-center justify-center">
                 <p className="text-slate-700 italic text-center text-sm">
-                  "Lubos po akong nagpapasalamat sa REX Education Scholarship Program sa walang sawang suporta at tulong pinansyal na ibinigay sa akin sa loob ng sampung taon. Mula sa pagiging batch valedictorian noong elementarya, salutatorian noong senior high school, at ngayon ay nagtapos bilang Magna Cum Laude sa kolehiyo — hindi ko po mararating ang lahat ng ito kung wala ang tulong at tiwalang ibinigay ninyo sa akin.
+                  "Magandang araw po. Ako po ay lubos na nagpapasalamat sa REX Education Scholarship Program sa pagkakataong maging isa sa mga iskolar nito.
                   <br /><br />
-                  Tunay na ang REX Education Scholarship ay hindi lamang naging daan upang maipagpatuloy ko ang aking pag-aaral, kundi naging inspirasyon din upang patuloy akong magsikap at magtagumpay. Sa bawat hakbang ay kasama ko kayo — ang programang nagpatunay na ang isang batang nangangarap ay kayang makamit ang lahat kung may taong naniniwala sa kanyang kakayahan.
+                  Noong ako po ay nasa kolehiyo, marami kaming pinagdaanang pagsubok sa pamilya lalo na sa aspetong pinansyal. Ang scholarship na ito ang naging isa sa mga dahilan kung bakit naipagpatuloy ko ang aking pag-aaral nang hindi nawawalan ng pag-asa.
                   <br /><br />
-                  Dalangin ko po na mas marami pa kayong batang Batangueño na mabigyan ng pagkakataong makamit ang kanilang mga pangarap — tulad ng ginawa ninyo para sa akin.
+                  Sa awa ng Diyos, nakapagtapos po ako ng BS Accountancy at matagumpay na naipasa ang board examination. Ang inyong tulong ay naging mahalagang bahagi ng aking tagumpay.
                   <br /><br />
-                  Mula sa puso, maraming salamat po, REX Education Scholarship Program!"
+                  Maraming salamat po sa inyong malasakit at dedikasyon sa pagtulong sa mga estudyante. Nawa'y mas marami pa po kayong mabigyang inspirasyon at pag-asa."
                 </p>
               </CardContent>
             </Card>
@@ -125,19 +127,21 @@ const TestimonialsSection = () => {
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
                   <img alt="Profile picture of Marjonnel D. Panganiban, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/f8d2d0655365c8c04acd25d731441143.jpg" />
                 </div>
-                <CardTitle className="text-xl font-bold text-slate-800 text-center">Marjonnel D. Panganiban</CardTitle>
+                <CardTitle className="text-xl font-bold text-slate-800 text-center">Jonathan Alex T. Chua</CardTitle>
                 <p className="text-sm text-slate-500 text-center">23, Malitam, Batangas City</p>
                 <p className="text-sm text-slate-500 text-center">BA in Communication, University of Batangas, 2025</p>
                 <p className="text-sm text-slate-500 text-center">Cum Laude, Top 8 CAS Graduating Student & other awards</p>
               </CardHeader>
               <CardContent className="p-6 pt-0 flex-grow flex items-center justify-center">
-                <p className="text-slate-700 italic text-center text-sm">
-                  "Ako’y taos-pusong nagpapasalamat bilang isa sa mga mapalad na iskolar ng REX Education Scholarship Program. Mula pa noong 2014 hanggang sa aking pagtatapos sa kolehiyo, naging malaking tulong ang inyong ipinagkaloob na suporta bilang isang mag-aaral.
-                  <br /><br />
-                  Dahil sa programang ito, nabawasan ang bigat ng gastusin sa aking pamilya at nabigyan ako ng pagkakataong tutukan ng mas maigi ang aking pagaaral at mangarap ng mas malaki. Isa kayo sa naging dahilan kung bakit natupad ko ang isa sa pinakamalaki kong pangarap-ang makapagtapos ng kolehiyo.
-                  <br /><br />
-                  Maraming salamat po, Mayor, sa patuloy ninyong pagtitiwala at malasakit sa mga kabataang Batangueño, Hinding-hindi ko malilimutan ang tulong at oportunidad na inyong ibinahagi. Bitbit ko ang karangalang ito habang pinipilit kong makapagbigay rin ng ambag sa ating mahal na lungsod."
-                </p>
+               <p className="text-slate-700 italic text-center text-sm">
+                "Isang mapagpalang araw po. Nais ko pong ipaabot ang aking taos-pusong pasasalamat sa REX Education Scholarship Program at sa lahat ng bumubuo nito.
+                <br /><br />
+                Bilang first-generation college student sa aming pamilya, napakalaking bagay po ng suportang aking natanggap. Hindi lamang ito nakatulong sa aking mga pangangailangang pang-eskwela kundi nagbigay rin ng inspirasyon upang magsikap nang higit pa.
+                <br /><br />
+                Dahil po sa pagkakataong ito, nakapagtapos ako ng kursong BS Civil Engineering at kasalukuyan nang nagtatrabaho sa propesyong aking pinangarap noon pa man.
+                <br /><br />
+                Maraming salamat po sa inyong patuloy na pagtulong sa mga estudyanteng tulad ko. Nawa'y patuloy pang lumawak ang programang ito upang mas marami pang pangarap ang matupad."
+              </p>
               </CardContent>
             </Card>
           </motion.div>
@@ -153,14 +157,20 @@ const TestimonialsSection = () => {
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
                   <img alt="Profile picture of Jeila Cassandra A. Olgado, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/9d2ec39b0d4acbfd28584194777ab481.jpg" />
                 </div>
-                <CardTitle className="text-xl font-bold text-slate-800 text-center">Jeila Cassandra A. Olgado</CardTitle>
+                <CardTitle className="text-xl font-bold text-slate-800 text-center">Lovelynn K. Kapunan</CardTitle>
                 <p className="text-sm text-slate-500 text-center">22, Sorosoro Ibaba Batangas City</p>
                 <p className="text-sm text-slate-500 text-center">BS in Aircraft Maintenance Technology, 2025</p>
                 <p className="text-sm text-slate-500 text-center">Magna Cum Laude</p>
               </CardHeader>
               <CardContent className="p-6 pt-0 flex-grow flex items-center justify-center">
                 <p className="text-slate-700 italic text-center text-sm">
-                  "I would like to express my heartfelt gratitude for the scholarship opportunity you have generously provided. Being selected as one of the grantees is truly an honor and a great help to me and my family. Your support motivates me to work even harder in pursuing my dreams, and I am deeply thankful for your dedication to education."
+                  "Magandang araw po. Lubos po akong nagpapasalamat sa REX Education Scholarship Program dahil naging bahagi ito ng aking tagumpay bilang estudyante.
+                  <br /><br />
+                  Sa mga panahong nahihirapan po kaming tustusan ang aking pag-aaral, ang scholarship na ito ang nagsilbing malaking suporta upang maipagpatuloy ko ang aking edukasyon nang may kapanatagan ng loob.
+                  <br /><br />
+                  Nakatapos po ako ng BS Nursing at ngayon ay nagsisilbi bilang isang registered nurse. Ang bawat hakbang ko patungo sa aking pangarap ay may kalakip na pasasalamat sa programang ito.
+                  <br /><br />
+                  Maraming salamat po sa inyong kabutihan at walang sawang suporta sa mga kabataang nangangarap. Nawa'y patuloy kayong pagpalain at gabayan sa inyong misyon."
                 </p>
               </CardContent>
             </Card>

@@ -29,14 +29,14 @@ const CitizensCharter = () => {
       </CardHeader>
       <CardContent className="pt-6">
         <div className="h-[70vh] overflow-y-auto space-y-4 pr-2 rounded-lg border border-slate-200 p-2">
-          {charterImages.map((src, index) => (
+          {/* {charterImages.map((src, index) => (
             <img 
               key={index} 
               src={src} 
               alt={`Citizen's Charter Page ${index + 1}`} 
               className="w-full h-auto rounded-md shadow-lg"
             />
-          ))}
+          ))} */}
         </div>
       </CardContent>
     </Card>

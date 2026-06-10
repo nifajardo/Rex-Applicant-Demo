@@ -14,11 +14,11 @@ const ProcessGuide = () => {
         <h1 className="text-xl text-red-700">REX Education Scholarship Process Guide</h1>
         <p className="text-slate-600 mb-6">Here's a comprehensive guide to help you navigate the REX Education Scholarship application process.</p>
         <div className="overflow-x-auto">
-          <img 
+          {/* <img 
             src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/a4771a628bb4d09fcf4352dee94b6dd7.png"
             alt="REX Education Scholarship Process Guide"
             className="max-w-full h-auto rounded-lg shadow-sm mx-auto block"
-          />
+          /> */}
         </div>
       </div>
     </>
