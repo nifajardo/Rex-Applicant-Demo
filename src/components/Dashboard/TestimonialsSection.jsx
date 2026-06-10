@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
             <Card className="bg-white shadow-lg rounded-xl overflow-hidden border border-slate-200 flex flex-col h-full">
               <CardHeader className="flex flex-col items-center p-6 pb-4">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
-                  <img alt="Profile picture of Yrielle Lyka M. De Castro, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/1112a950c98683824791d86dcdb41123.jpg" />
+                  <img alt="Profile picture of Yrielle Lyka M. De Castro, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="/linda-walker.png" />
                 </div>
                 <CardTitle className="text-xl font-bold text-slate-800 text-center">Shane B. Lawson</CardTitle>
                 <p className="text-sm text-slate-500 text-center">21, El Sitio Subdivision, Dumantay, Batangas City</p>
@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
             <Card className="bg-white shadow-lg rounded-xl overflow-hidden border border-slate-200 flex flex-col h-full">
               <CardHeader className="flex flex-col items-center p-6 pb-4">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
-                  <img alt="Profile picture of John Aeron A. Canatuan, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/5b22c0b7e7a0ff3c5367325cc06a8ba7.jpg" />
+                  <img alt="Profile picture of John Aeron A. Canatuan, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="/linda-walker.png" />
                 </div>
                 <CardTitle className="text-xl font-bold text-slate-800 text-center">Mitchell L. Dela Cruz</CardTitle>
                 <p className="text-sm text-slate-500 text-center">22, Purok 1, Kumintang Ilaya, Batangas City</p>
@@ -125,7 +125,7 @@ const TestimonialsSection = () => {
             <Card className="bg-white shadow-lg rounded-xl overflow-hidden border border-slate-200 flex flex-col h-full">
               <CardHeader className="flex flex-col items-center p-6 pb-4">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
-                  <img alt="Profile picture of Marjonnel D. Panganiban, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/f8d2d0655365c8c04acd25d731441143.jpg" />
+                  <img alt="Profile picture of Marjonnel D. Panganiban, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="/linda-walker.png" />
                 </div>
                 <CardTitle className="text-xl font-bold text-slate-800 text-center">Jonathan Alex T. Chua</CardTitle>
                 <p className="text-sm text-slate-500 text-center">23, Malitam, Batangas City</p>
@@ -155,7 +155,7 @@ const TestimonialsSection = () => {
             <Card className="bg-white shadow-lg rounded-xl overflow-hidden border border-slate-200 flex flex-col h-full">
               <CardHeader className="flex flex-col items-center p-6 pb-4">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 flex items-center justify-center" style={{border:"4px solid #c0242d"}}>
-                  <img alt="Profile picture of Jeila Cassandra A. Olgado, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="https://horizons-cdn.hostinger.com/d6072fa7-128b-46a4-ab77-ba22abd6dbeb/9d2ec39b0d4acbfd28584194777ab481.jpg" />
+                  <img alt="Profile picture of Jeila Cassandra A. Olgado, a scholarship beneficiary" className="w-full h-full object-cover object-center" src="/linda-walker.png" />
                 </div>
                 <CardTitle className="text-xl font-bold text-slate-800 text-center">Lovelynn K. Kapunan</CardTitle>
                 <p className="text-sm text-slate-500 text-center">22, Sorosoro Ibaba Batangas City</p>
