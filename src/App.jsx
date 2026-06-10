@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom"; // ✅ import routing componen
 import RegistrationForm from "@/components/RegistrationForm";
 import Dashboard from "@/components/Dashboard";
 import AuthPage from "@/pages/AuthPage";
-import Quiz from "@/components/Quiz/Quiz";
-import ImagePresentation from "@/components/Quiz/ImagePresentation";
 import ApplicationClosed from "@/components/ApplicationClosed"; // ✅ import your closed page
 import ApplicantGuidePage from "@/pages/ApplicantGuidePage"; // ✅ import applicant guide
 import { useAuth } from "@/hooks/useAuth";
@@ -16,26 +14,12 @@ const App = () => {
   const {
     isLoggedIn,
     userId,
-    quizCompleted,
-    setQuizCompleted,
     isLoading: authIsLoading,
     handleLogin,
-    handleGoogleSignIn,
     handleLogout,
   } = useAuth();
 
   const [registrationOpen, setRegistrationOpen] = useState(false);
-  const [presentationFinished, setPresentationFinished] = useState(quizCompleted);
-
-  const handleQuizPassed = () => {
-    setQuizCompleted(true);
-    setPresentationFinished(true);
-  };
-
-  const handlePresentationFinish = () => {
-    setPresentationFinished(true);
-  };
-
   if (authIsLoading) {
     return <LoadingSpinner message="Authenticating, please wait..." />;
   }
@@ -45,22 +29,13 @@ const App = () => {
       return (
         <AuthPage
           onLogin={handleLogin}
-          onGoogleSignIn={handleGoogleSignIn}
           onOpenRegistration={() => setRegistrationOpen(true)}
           isLoading={authIsLoading}
         />
       );
     }
 
-    if (quizCompleted) {
-      return <Dashboard onLogout={handleLogout} />;
-    }
-
-    if (!presentationFinished) {
-      return <ImagePresentation onPresentationFinish={handlePresentationFinish} />;
-    } else {
-      return <Quiz onQuizPassed={handleQuizPassed} userId={userId} />;
-    }
+    return <Dashboard onLogout={handleLogout} />;
   };
 
   return (
