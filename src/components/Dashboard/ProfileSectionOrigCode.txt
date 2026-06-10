@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import AcademicInfo from "./info-sections/AcademicInfo";
+import ParentalInfo from "./info-sections/ParentalInfo";
+
+const ProfileSection = ({ profileData, onEditClick }) => {
+  const [activeTab, setActiveTab] = useState("academic");
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-center bg-slate-200/60 p-1 rounded-lg max-w-md mx-auto">
+        <button
+          onClick={() => setActiveTab("academic")}
+          className={`w-full py-2 px-4 rounded-md font-medium text-sm transition-all duration-300 ${
+            activeTab === "academic"
+              ? "bg-white text-slate-800 shadow"
+              : "bg-transparent text-slate-600 hover:bg-slate-200"
+          }`}
+        >
+          Academic Info
+        </button>
+        <button
+          onClick={() => setActiveTab("parental")}
+          className={`w-full py-2 px-4 rounded-md font-medium text-sm transition-all duration-300 ${
+            activeTab === "parental"
+              ? "bg-white text-slate-800 shadow"
+              : "bg-transparent text-slate-600 hover:bg-slate-200"
+          }`}
+        >
+          Parental Info
+        </button>
+      </div>
+
+      <Card>
+        <CardContent className="p-4 sm:p-6">
+          <div>
+            {activeTab === "academic" && <AcademicInfo profileData={profileData} />}
+            {activeTab === "parental" && <ParentalInfo profileData={profileData} />}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
+export default ProfileSection;

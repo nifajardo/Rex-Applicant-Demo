@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Rex Academy-inspired palette */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 16%;
+
+    /* Rex primary red: #c0242d */
+    --primary: 357 67% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Rex secondary: deep navy */
+    --secondary: 220 60% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 357 67% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 357 67% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 88%;
+    --input: 220 14% 95%;
+    --ring: 357 67% 44%;
+
+    --radius: 0.375rem;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 0 0% 96%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 357 67% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 60% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 12% 68%;
+
+    --accent: 357 67% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 357 67% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 18% 22%;
+    --input: 220 20% 16%;
+    --ring: 357 67% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9fb;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Rex Academy-style utility classes */
+@layer components {
+  .rex-header {
+    background: #fff;
+    border-bottom: 3px solid #c0242d;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .rex-btn-primary {
+    background: #c0242d;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+  }
+
+  .rex-btn-primary:hover {
+    background: #a01e26;
+  }
+
+  .rex-tab-active {
+    background: #c0242d !important;
+    color: #fff !important;
+  }
+
+  .rex-card {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-top: 3px solid #c0242d;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+
+  .rex-section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #1a1a2e;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .rex-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: #c0242d;
+    border-radius: 2px;
+  }
+}
+
+/* Rex Academy Tab Active State */
+[data-state="active"][role="tab"] {
+  background-color: #c0242d !important;
+  color: #ffffff !important;
+}
+
+/* Rex Academy link/anchor accent */
+a:hover {
+  color: #c0242d;
+}

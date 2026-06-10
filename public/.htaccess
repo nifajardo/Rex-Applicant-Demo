@@ -1,0 +1,53 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    #Redirection rule 
+    RewriteCond %{HTTP_HOST} ^www\.ebdscholarshipprogram\.com [NC]
+    RewriteRule ^(.*)$ https://ebdscholarshipprogram.com/$1 [L,R=301]
+    
+    # Redirect if outside 8am–5pm Mon–Fri
+    # Mon=1 ... Sun=0
+    RewriteCond %{TIME_HOUR} <00 [OR]
+    RewriteCond %{TIME_HOUR} >=10 [OR]
+    RewriteCond %{TIME_WDAY} =0 [OR]
+    RewriteCond %{TIME_WDAY} =7
+    RewriteRule ^.*$ closed.html [L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Powered-By "Hostinger Horizons"
+
+  # Cache everything on CDN by default
+  Header set Cache-Control "public, s-maxage=604800, max-age=0"
+  
+  # Cache in browser all assets
+  <If "%{REQUEST_URI} =~ m#^/assets/.*$#">
+    Header set Cache-Control "public, max-age=604800"
+  </If>
+</IfModule>
+
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteBase /
+
+#     # Redirect if outside 8am–5pm Philippine Time (UTC+8)
+#     # If server is UTC, then 8am–5pm PH = 00–09 UTC
+#     RewriteCond %{TIME_HOUR} <00 [OR]
+#     RewriteCond %{TIME_HOUR} >=09 [OR]
+#     RewriteCond %{TIME_WDAY} =0 [OR]
+#     RewriteCond %{TIME_WDAY} =6
+#     RewriteRule ^.*$ closed.html [L]
+
+#     # Fallback to index.html
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule ^ index.html [L]
+# </IfModule>
