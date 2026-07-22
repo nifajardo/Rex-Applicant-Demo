@@ -19,6 +19,43 @@ function saveDB(db) {
   localStorage.setItem(DB_KEY, JSON.stringify(db));
 }
 
+// ── shared cache (bridges this app with the Admin demo) ───────
+// A few tables (applicant records + feedback + chatbot inquiries)
+// need to be visible to BOTH this app and the Admin app. Since the
+// two apps run on different origins, plain localStorage can't cross
+// between them — so for just these tables we read/write through a
+// tiny local HTTP server instead. Everything else (profile, quiz,
+// community posts, uploaded files, etc.) stays local-only, exactly
+// as before.
+const SHARED_CACHE_URL = import.meta.env.VITE_SHARED_CACHE_URL || 'http://localhost:4500';
+const SHARED_TABLES = ['synced_profiles', 'feedback', 'chatbot_inquiries'];
+
+async function refreshSharedTable(db, table) {
+  if (!SHARED_TABLES.includes(table)) return db;
+  try {
+    const res = await fetch(`${SHARED_CACHE_URL}/table/${table}`);
+    if (res.ok) db[table] = await res.json();
+  } catch (_) {
+    // Shared cache server not running — fall back to local copy silently.
+  }
+  return db;
+}
+
+async function persist(db, table) {
+  saveDB(db);
+  if (SHARED_TABLES.includes(table)) {
+    try {
+      await fetch(`${SHARED_CACHE_URL}/table/${table}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(db[table] || []),
+      });
+    } catch (_) {
+      // Shared cache server not running — change stays local-only for now.
+    }
+  }
+}
+
 function seed() {
   const db = {
     users: [
@@ -27,6 +64,20 @@ function seed() {
         email: 'demo@rex.ph',
         password: 'Demo1234!',
         full_name: 'Demo Applicant',
+        created_at: new Date().toISOString(),
+      },
+      {
+        id: 'demo-user-002',
+        email: 'alyssa@rex.ph',
+        password: 'Demo1234!',
+        full_name: 'Alyssa Ramirez',
+        created_at: new Date().toISOString(),
+      },
+      {
+        id: 'demo-user-003',
+        email: 'miguel@rex.ph',
+        password: 'Demo1234!',
+        full_name: 'Miguel Torres',
         created_at: new Date().toISOString(),
       }
     ],
@@ -45,6 +96,50 @@ function seed() {
         academic_year: '2nd Year',
         gwa: 1.5,
         scholarship_type: 'ACADEMIC',
+        application_type: 'New Application',
+        father_is_deceased: false,
+        mother_is_deceased: false,
+        is_solo_parent: false,
+        quiz_completed: true,
+        privacy: false,
+        updated_at: new Date().toISOString(),
+      },
+      {
+        id: 'demo-user-002',
+        full_name: 'Alyssa Ramirez',
+        email: 'alyssa@rex.ph',
+        phone: '09181234567',
+        address: 'San Isidro, Batangas City',
+        barangay: 'San Isidro',
+        birthdate: '2001-04-22',
+        gender: 'Female',
+        school: 'Batangas State University',
+        program: 'BS Accountancy',
+        academic_year: '3rd Year',
+        gwa: 1.65,
+        scholarship_type: 'ACADEMIC',
+        application_type: 'New Application',
+        father_is_deceased: false,
+        mother_is_deceased: false,
+        is_solo_parent: false,
+        quiz_completed: true,
+        privacy: false,
+        updated_at: new Date().toISOString(),
+      },
+      {
+        id: 'demo-user-003',
+        full_name: 'Miguel Torres',
+        email: 'miguel@rex.ph',
+        phone: '09191234567',
+        address: 'Poblacion, Batangas City',
+        barangay: 'Poblacion',
+        birthdate: '2000-11-03',
+        gender: 'Male',
+        school: 'TESDA Regional Center',
+        program: 'Welding NC II',
+        academic_year: '1st Year',
+        gwa: '',
+        scholarship_type: 'TESDA',
         application_type: 'New Application',
         father_is_deceased: false,
         mother_is_deceased: false,
@@ -287,15 +382,13 @@ class QueryBuilder {
   // Allow .select() chained after insert/update/upsert to return data
   // The query executes on await (thenable)
   then(resolve, reject) {
-    try {
-      resolve(this._execute());
-    } catch (e) {
-      reject(e);
-    }
+    this._execute().then(resolve, reject);
   }
 
-  _execute() {
+  async _execute() {
     const db = loadDB();
+    if (!db[this._table]) db[this._table] = [];
+    await refreshSharedTable(db, this._table);
     const table = db[this._table];
 
     if (!table) {
@@ -334,7 +427,7 @@ class QueryBuilder {
       const rows = Array.isArray(this._insertData) ? this._insertData : [this._insertData];
       const inserted = rows.map(r => ({ ...r, id: r.id || `${this._table}-${Date.now()}-${Math.random().toString(36).slice(2)}`, created_at: r.created_at || new Date().toISOString() }));
       db[this._table].push(...inserted);
-      saveDB(db);
+      await persist(db, this._table);
       if (this._single) return ok(inserted[0]);
       return ok(inserted);
     }
@@ -347,7 +440,7 @@ class QueryBuilder {
         updated = newRow;
         return newRow;
       });
-      saveDB(db);
+      await persist(db, this._table);
       if (this._single) return ok(updated);
       return ok(updated ? [updated] : []);
     }
@@ -368,13 +461,13 @@ class QueryBuilder {
           results.push(toInsert);
         }
       });
-      saveDB(db);
+      await persist(db, this._table);
       return ok(results.length === 1 ? results[0] : results);
     }
 
     if (this._operation === 'delete') {
       db[this._table] = db[this._table].filter(r => !matchRow(r));
-      saveDB(db);
+      await persist(db, this._table);
       return ok(null);
     }
 
@@ -582,14 +675,18 @@ export const hasUserLikedPost = async (postId, userId) => {
 
 export const submitFeedback = async (feedbackData) => {
   const db = loadDB();
+  if (!db.feedback) db.feedback = [];
+  await refreshSharedTable(db, 'feedback');
   db.feedback.push({ ...feedbackData, id: `fb-${Date.now()}`, created_at: new Date().toISOString() });
-  saveDB(db);
+  await persist(db, 'feedback');
   return ok({});
 };
 
 export const createChatbotInquiry = async (inquiryData) => {
   const db = loadDB();
+  if (!db.chatbot_inquiries) db.chatbot_inquiries = [];
+  await refreshSharedTable(db, 'chatbot_inquiries');
   db.chatbot_inquiries.push({ ...inquiryData, id: `ci-${Date.now()}`, created_at: new Date().toISOString() });
-  saveDB(db);
+  await persist(db, 'chatbot_inquiries');
   return ok({});
 };

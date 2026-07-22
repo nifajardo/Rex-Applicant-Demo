@@ -379,6 +379,27 @@ export const useProfileManager = (userId, userEmail, userName) => {
 
       if (emailError) throw emailError;
 
+      // Push this application into the shared applicant record so the
+      // Admin app can see it and start evaluating/verifying it.
+      try {
+        await supabase.from('synced_profiles').upsert({
+          id: userId,
+          full_name: profileData.full_name || userName || '',
+          email: profileData.email || userEmail || '',
+          status: 'pending',
+          stage: 'evaluation',
+          scholarship_type: profileData.scholarship_type || 'ACADEMIC',
+          gender: profileData.gender || '',
+          program: profileData.program || '',
+          barangay: profileData.barangay || '',
+          school: profileData.school || '',
+          gwa: profileData.gwa || null,
+          notes: '',
+        }, { onConflict: 'id' });
+      } catch (syncErr) {
+        console.error('Could not sync application to admin queue:', syncErr);
+      }
+
       toast({
         title: "Application Submitted!",
         description: "A confirmation email is on its way.",
